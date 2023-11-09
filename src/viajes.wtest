@@ -1,0 +1,39 @@
+import viajes.*
+
+describe "viajes"{
+	
+	const vdp= new ViajesDePlaya(largo = 100000, idioma = "espaniol")
+	const sdt = new SalidaDeTrekking (kmDeSendero = 250, cantDeDiaDeSol = 130, idioma = "espaniol")
+	method initialize(){
+		vdp.cantidadDeDias()
+		vdp.esfuerzo()
+		vdp.broncearse()
+		sdt.cantidadDeDias()
+		sdt.esfuerzo()
+		sdt.broncearse()
+		sdt.kmDeSendero()
+	}
+test "cantidad de dias " {
+		assert.equals(200, vdp.cantidadDeDias())
+
+}
+test "esfuerzo"{
+	assert.that(vdp.esfuerzo())
+}
+test "broncearse"{
+	assert.that(vdp.broncearse())
+}
+test "km de sendero de salida de trekking"{
+	assert.equals(250,sdt.kmDeSendero())
+}
+test"cantidad de dias salida de trekking"{
+	assert.equals(5,sdt.cantidadDeDias())
+	
+}
+test "implica esfuerzo"{
+	assert.that(sdt.esfuerzo())
+}
+test "no sirve para broncearse"{
+	assert.that(sdt.broncearse())
+}
+}
